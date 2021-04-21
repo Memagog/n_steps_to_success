@@ -3,7 +3,7 @@ import Header from "./Header";
 import InputTodo from "./InputTodo";
 import TodoList from "./TodoList";
 import { v4 as uuidv4 } from "uuid";
- const TodoContainer = () =>  {
+ const TodoContainer = () => {
     
     // useEffect(() => {
     //   console.log("test run eddeckt")
@@ -22,8 +22,7 @@ import { v4 as uuidv4 } from "uuid";
     const [todos, setTodos] = useState(getInitialTodos())
     useEffect(() => {       
         const temp = JSON.stringify(todos)
-        localStorage.setItem("todos", temp)
-     
+        localStorage.setItem("todos", temp)     
     }, [todos])
     
     // componentWillUnmount() {
@@ -68,23 +67,19 @@ import { v4 as uuidv4 } from "uuid";
                 return todo
         })
         )
-    }
-    
-  
-   
-   
+    }  
         return (
            <div className="container"> 
-           <div>
-           <Header/>  
-               <InputTodo addTodoItemProps={addTodoItem}/>          
-               <TodoList 
-               todos = {todos} 
-               handleChangeProps={handleChange}
-               deleteTodoProps = {delTodo}  
-               updateTodoProps = {updateTodo}                      
-               />
-           </div>                
+            <div>
+                <Header/>  
+                    <InputTodo addTodoItemProps={addTodoItem}/>          
+                    <TodoList 
+                    todos = {todos} 
+                    handleChangeProps={handleChange}
+                    deleteTodoProps = {delTodo}  
+                    updateTodoProps = {updateTodo}                      
+                    />
+            </div>                
            </div>
         )
    
